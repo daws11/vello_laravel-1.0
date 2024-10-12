@@ -262,7 +262,7 @@ body {
 }
 
 .navbar {
-  background-color: var(--white);
+  background-color: var(--purple-navy);
   position: fixed;
   top: 0;
   left: -280px;
@@ -276,6 +276,7 @@ body {
 }
 
 .navbar.active {
+  background-color: var(--purple-navy);
   transform: translateX(280px);
   visibility: visible;
   transition: 0.5s var(--cubic-out);

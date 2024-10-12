@@ -29,11 +29,18 @@ Route::get('/service/detail', [ServiceController::class, 'detail'])->name('servi
 Route::get('/service/customer-form', [ServiceController::class, 'loadCustomerForm']);
 
 //blog route
+// Rute untuk halaman frontend blog
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
-Route::get('/blog/polda-metro-jaya-crime-dashboard/portfolio', [BlogController::class, 'showPoldaPortfolio'])->name('blog.polda.portfolio');
-
-
+// Rute untuk halaman admin blog (CRUD)
+Route::prefix('blog/admin')->name('admin.')->group(function () {
+    Route::get('/index', [BlogController::class, 'adminIndex'])->name('index'); // Daftar blog di admin
+    Route::get('/create', [BlogController::class, 'create'])->name('create'); // Form tambah blog
+    Route::post('/store', [BlogController::class, 'store'])->name('store'); // Simpan blog baru
+    Route::get('/edit/{blog}', [BlogController::class, 'edit'])->name('edit'); // Form edit blog
+    Route::put('/update/{blog}', [BlogController::class, 'update'])->name('update'); // Update blog
+    Route::delete('/delete/{blog}', [BlogController::class, 'destroy'])->name('destroy'); // Hapus blog
+});
 
 

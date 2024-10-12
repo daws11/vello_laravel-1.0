@@ -9,28 +9,26 @@
             <li>
                 <div class="blog-card fade-in-top">
                     <figure class="banner">
-                        <a href="{{ route('blog.show', $blog['slug']) }}">
-                            <!-- Mengambil gambar dari folder public/assets/images/blog -->
-                            <img src="{{ asset('assets/images/blog/' . $blog['image']) }}" width="750" height="350" loading="lazy" alt="{{ $blog['title'] }}" class="img-cover">
+                        <a href="{{ route('blog.show', $blog->slug) }}">
+                            <img src="{{ asset('assets/images/blog/' . $blog->image) }}" width="750" height="350" loading="lazy" alt="{{ $blog->title }}" class="img-cover">
                         </a>
                     </figure>
                     <div class="content">
                         <h3 class="h3 title">
-                            <a href="{{ route('blog.show', $blog['slug']) }}">
-                                {{ $blog['title'] }}
+                            <a href="{{ route('blog.show', $blog->slug) }}">
+                                {{ $blog->title }}
                             </a>
                         </h3>
                         <p class="text">
-                            {{ $blog['description'] }}
+                            {{ Str::limit($blog->content_paragraphs[0], 100) }} <!-- Menampilkan cuplikan paragraf pertama -->
                         </p>
-                        <!-- Tampilkan tag berdasarkan jenis konten -->
-                        <span class="tag {{ $blog['type'] === 'portofolio' ? 'tag-portfolio' : 'tag-blog' }}">
-                            {{ ucfirst($blog['type']) }}
+                        <span class="tag {{ $blog->type === 'portofolio' ? 'tag-portfolio' : 'tag-blog' }}">
+                            {{ ucfirst($blog->type) }}
                         </span>
                         <div class="meta">
                             <div class="publish-date">
                                 <ion-icon name="time-outline"></ion-icon>
-                                <time datetime="{{ $blog['date'] }}">{{ \Carbon\Carbon::parse($blog['date'])->format('d M, Y') }}</time>
+                                <time datetime="{{ $blog->date }}">{{ \Carbon\Carbon::parse($blog->date)->format('d M, Y') }}</time>
                             </div>
                         </div>
                     </div>
@@ -40,5 +38,4 @@
         </ul>
     </div>
 </section>
-
 @endsection
