@@ -224,8 +224,8 @@ body {
 
 .header {
   --color: var(--white);
-
-  position: absolute;
+  background-color: var(--ksu-purple);
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -238,7 +238,7 @@ body {
   --color: var(--st-patricks-blue);
 
   position: fixed;
-  background-color: var(--white);
+  background-color: var(--purple-navy);
   box-shadow: 0 2px 30px hsla(0, 0%, 0%, 0.1);
 }
 
@@ -262,7 +262,7 @@ body {
 }
 
 .navbar {
-  background-color: var(--purple-navy);
+  background-color: var(--white);
   position: fixed;
   top: 0;
   left: -280px;
@@ -276,7 +276,6 @@ body {
 }
 
 .navbar.active {
-  background-color: var(--purple-navy);
   transform: translateX(280px);
   visibility: visible;
   transition: 0.5s var(--cubic-out);

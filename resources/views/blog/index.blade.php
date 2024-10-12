@@ -3,7 +3,7 @@
 @section('content')
 <section class="section blog" id="blog">
     <div class="container">
-        <h2 class="h2 section-title underline fade-in-bottom">Blog & Portofolio</h2>
+        <h2 class="h2 section-title underline fade-in-bottom"style="margin-top: 80px;">Blog & Portofolio</h2>
         <ul class="blog-list">
             @foreach ($blogs as $blog)
             <li>

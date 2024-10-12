@@ -39,7 +39,7 @@
             <h2 class="h2 section-title underline fade-in-bottom">Kenapa Harus Kami?</h2>
 
             <p class="about-text fade-in-bottom">
-            Di <strong>Vello Technology Digital</strong>, kami memahami bahwa <strong>setiap bisnis unik</strong> dan memiliki tantangan tersendiri dalam <strong>menghadapi era digital</strong>. Dengan pendekatan personal dan solusi yang disesuaikan, kami membantu usaha Anda <strong>meraih potensi penuh</strong> melalui <strong>digitalisasi</strong>. Tim kami terdiri dari para ahli berpengalaman di bidang teknologi, siap memberikan inovasi terkini untuk meningkatkan efisiensi, memperkuat keamanan data, dan memaksimalkan pertumbuhan bisnis Anda. Kami hadir sebagai <strong>mitra transformasi digital</strong> yang andal, memastikan kesuksesan di masa depan.<strong> Digitalkan Masa Depanmu Bersama Kami!</strong>
+    Di <strong>Digitalinkuy</strong>, kami memahami bahwa <strong>setiap bisnis unik</strong> dan memiliki tantangan tersendiri dalam <strong>menghadapi era digital</strong>. Dengan pendekatan personal dan solusi yang disesuaikan, kami membantu usaha Anda <strong>meraih potensi penuh</strong> melalui <strong>digitalisasi</strong>. Tim kami terdiri dari para ahli berpengalaman di bidang teknologi, siap memberikan inovasi terkini untuk meningkatkan efisiensi, memperkuat keamanan data, dan memaksimalkan pertumbuhan bisnis Anda. Kami hadir sebagai <strong>mitra transformasi digital</strong> yang andal, memastikan kesuksesan di masa depan.<strong> Digitalkan Masa Depanmu Bersama Kami!</strong>
             </p>
 
           </div>

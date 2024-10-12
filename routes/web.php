@@ -19,14 +19,14 @@ Route::get('kebijakan-privasi', function ()
 
 
 //service route
-Route::get('/services', function () {
-    return view('services');
-})->name('services');
-Route::get('/services', [ServiceController::class, 'index'])->name('services');
-Route::get('/service-data/{serviceId}', [ServiceController::class, 'getServiceData'])->name('service.data');
-Route::post('/save-user-data', [UserServiceController::class, 'saveUserData']);
-Route::get('/service/detail', [ServiceController::class, 'detail'])->name('service.detail');
-Route::get('/service/customer-form', [ServiceController::class, 'loadCustomerForm']);
+// Route::get('/services', function () {
+//     return view('services');
+// })->name('services');
+// Route::get('/services', [ServiceController::class, 'index'])->name('services');
+// Route::get('/service-data/{serviceId}', [ServiceController::class, 'getServiceData'])->name('service.data');
+// Route::post('/save-user-data', [UserServiceController::class, 'saveUserData']);
+// Route::get('/service/detail', [ServiceController::class, 'detail'])->name('service.detail');
+// Route::get('/service/customer-form', [ServiceController::class, 'loadCustomerForm']);
 
 //blog route
 // Rute untuk halaman frontend blog
