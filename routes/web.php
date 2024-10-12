@@ -5,6 +5,7 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\UserServiceController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\QuizResponseController;
 
 Route::get('/', function () {
     return view('home');
@@ -16,24 +17,17 @@ Route::get('kebijakan-privasi', function ()
     return view('privacy');
 })->name('kebijakan-privasi');
 
+Route::post('/submit-quiz', [QuizResponseController::class, 'store'])->name('submit.quiz');
 
+Route::get('/services', [ServiceController::class, 'showQuiz'])->name('services');
 
-//service route
-// Route::get('/services', function () {
-//     return view('services');
-// })->name('services');
-// Route::get('/services', [ServiceController::class, 'index'])->name('services');
-// Route::get('/service-data/{serviceId}', [ServiceController::class, 'getServiceData'])->name('service.data');
-// Route::post('/save-user-data', [UserServiceController::class, 'saveUserData']);
-// Route::get('/service/detail', [ServiceController::class, 'detail'])->name('service.detail');
-// Route::get('/service/customer-form', [ServiceController::class, 'loadCustomerForm']);
 
 //blog route
-// Rute untuk halaman frontend blog
+
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
-// Rute untuk halaman admin blog (CRUD)
+
 Route::prefix('blog/admin')->name('admin.')->group(function () {
     Route::get('/index', [BlogController::class, 'adminIndex'])->name('index'); // Daftar blog di admin
     Route::get('/create', [BlogController::class, 'create'])->name('create'); // Form tambah blog

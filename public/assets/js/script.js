@@ -62,5 +62,80 @@ document.addEventListener('DOMContentLoaded', function () {
   hiddenElementsBottom.forEach(el => observer.observe(el));
 });
 
+//Quiz
+function showNextQuestion(index) {
+  const currentQuestion = document.getElementById(`question-${index}`);
+  const nextQuestion = document.getElementById(`question-${index + 1}`);
+  
+  if (nextQuestion) {
+      // Scroll to the next question and show it
+      nextQuestion.classList.remove('hidden');
+      nextQuestion.scrollIntoView({ behavior: 'smooth' });
 
+      // Apply fade-in effect using IntersectionObserver
+      nextQuestion.classList.add('fade-in-bottom');
+  }
+}
 
+// Function to show the next question
+function showNextQuestion(index) {
+  const currentQuestion = document.getElementById(`question-${index}`);
+  const nextQuestion = document.getElementById(`question-${index + 1}`);
+  
+  if (nextQuestion) {
+      // Scroll to the next question and show it
+      nextQuestion.classList.remove('hidden');
+      nextQuestion.scrollIntoView({ behavior: 'smooth' });
+
+      // Apply fade-in effect using IntersectionObserver
+      nextQuestion.classList.add('fade-in-bottom');
+  }
+}
+
+// Function to handle the selection of an answer
+function selectAnswer(questionIndex, answer) {
+  // Get all cards in the current question
+  const cards = document.querySelectorAll(`#question-${questionIndex} .card`);
+  
+  // Remove 'selected' class from all cards
+  cards.forEach(card => card.classList.remove('selected'));
+
+  // Highlight the selected card
+  const selectedCard = Array.from(cards).find(card => card.textContent === answer);
+  selectedCard.classList.add('selected');
+
+  // Show the next question
+  showNextQuestion(questionIndex);
+}
+
+// Function to handle the finish action
+function finishQuiz() {
+  submitQuiz();
+}
+
+function submitQuiz() {
+  // Simpan data form atau panggil Ajax jika perlu
+  let queueNumber = "0012"; // Contoh nomor antrian, ini bisa diambil dari server melalui Ajax.
+
+  // Setelah data tersimpan, tampilkan modal
+  document.getElementById('successModal').classList.remove('hidden');
+  document.getElementById('successModal').classList.add('show');
+
+  // Setel link WhatsApp dengan nomor antrian
+  const whatsappLink = `https://wa.me/+62895352359306?text=Halo, Saya ingin melanjutkan konsultasi dengan nomor antrian ${queueNumber}`;
+  document.getElementById('whatsappLink').setAttribute('href', whatsappLink);
+}
+
+function closeModal() {
+  // Tutup modal
+  document.getElementById('successModal').classList.remove('show');
+}
+
+// Function to show the description form when "Lainnya" is selected
+function showDescriptionForm(questionIndex) {
+  // Get the form element for the description
+  const descriptionForm = document.getElementById(`description-form-${questionIndex}`);
+  
+  // Show the description form
+  descriptionForm.classList.remove('hidden');
+}

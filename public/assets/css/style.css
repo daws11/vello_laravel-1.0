@@ -1518,3 +1518,8 @@ body {
 .tag-blog {
   background-color: rgba(0, 123, 255, 0.85); /* Biru dengan transparansi dikurangi */
 }
+
+.hidden {
+  display: none;
+}
+
